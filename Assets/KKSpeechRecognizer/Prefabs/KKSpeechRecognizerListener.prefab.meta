@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 69c76459e92ef4228aad5dd1d7ab7921
+timeCreated: 1475669089
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 73036
+  packageName: Mobile Speech Recognizer
+  packageVersion: 1.3.6
+  assetPath: Assets/KKSpeechRecognizer/Prefabs/KKSpeechRecognizerListener.prefab
+  uploadId: 452389

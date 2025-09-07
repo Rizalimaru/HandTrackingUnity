@@ -1,0 +1,277 @@
+{
+  "provinsi": [
+    {
+      "id_provinsi": "Aceh",
+      "nama_provinsi": "Aceh",
+      "daftar_alat": [
+        { "nama_alat": "Arbab", "deskripsi": "Arbab adalah alat musik gesek tradisional Aceh yang mirip dengan rebab.", "gambar": "arbab.png" },
+        { "nama_alat": "Serune Kalee", "deskripsi": "Serune Kalee adalah alat musik tiup sejenis terompet khas Aceh.", "gambar": "serune_kalee.png" }
+      ]
+    },
+    {
+      "id_provinsi": "SumateraUtara",
+      "nama_provinsi": "Sumatera Utara",
+      "daftar_alat": [
+        { "nama_alat": "Aramba", "deskripsi": "Aramba adalah alat musik pukul dari suku Nias yang berbentuk seperti gong kecil.", "gambar": "aramba.png" },
+        { "nama_alat": "Hasapi", "deskripsi": "Hasapi adalah alat musik petik dari Batak Toba yang menyerupai kecapi.", "gambar": "hasapi.png" }
+      ]
+    },
+    {
+      "id_provinsi": "SumateraBarat",
+      "nama_provinsi": "Sumatera Barat",
+      "daftar_alat": [
+        { "nama_alat": "Saluang", "deskripsi": "Saluang adalah alat musik tiup dari Minangkabau yang terbuat dari bambu tipis.", "gambar": "saluang.png" },
+        { "nama_alat": "Talempong", "deskripsi": "Talempong adalah alat musik pukul berbentuk gong kecil.", "gambar": "talempong.png" }
+      ]
+    },
+    {
+      "id_provinsi": "Riau",
+      "nama_provinsi": "Riau",
+      "daftar_alat": [
+        { "nama_alat": "Gambus", "deskripsi": "Gambus adalah alat musik petik seperti mandolin yang menjadi ciri khas musik Melayu Riau.", "gambar": "gambus.png" }
+      ]
+    },
+    {
+      "id_provinsi": "KepulauanRiau",
+      "nama_provinsi": "Kepulauan Riau",
+      "daftar_alat": [
+        { "nama_alat": "Gendang Panjang", "deskripsi": "Gendang Panjang adalah gendang dua sisi yang menjadi instrumen utama dalam musik Melayu.", "gambar": "gendang_panjang.png" }
+      ]
+    },
+    {
+      "id_provinsi": "Jambi",
+      "nama_provinsi": "Jambi",
+      "daftar_alat": [
+        { "nama_alat": "Kelintang", "deskripsi": "Kelintang adalah alat musik pukul yang terdiri dari bilah-bilah kayu atau logam yang disusun secara melodis.", "gambar": "kelintang.png" }
+      ]
+    },
+    {
+      "id_provinsi": "Bengkulu",
+      "nama_provinsi": "Bengkulu",
+      "daftar_alat": [
+        { "nama_alat": "Dol", "deskripsi": "Dol adalah gendang besar yang dimainkan dalam perayaan Tabot untuk menyambut tahun baru Islam.", "gambar": "dol.png" }
+      ]
+    },
+    {
+      "id_provinsi": "SumateraSelatan",
+      "nama_provinsi": "Sumatera Selatan",
+      "daftar_alat": [
+        { "nama_alat": "Tenun", "deskripsi": "Alat musik pukul dari kayu yang suaranya terinspirasi dari bunyi hentakan alat tenun tradisional.", "gambar": "tenun.png" }
+      ]
+    },
+    {
+      "id_provinsi": "KepulauanBangkaBelitung",
+      "nama_provinsi": "Kepulauan Bangka Belitung",
+      "daftar_alat": [
+        { "nama_alat": "Dambus", "deskripsi": "Dambus adalah alat musik petik khas Bangka Belitung yang mirip gambus, sering dihiasi ukiran kepala rusa.", "gambar": "dambus.png" }
+      ]
+    },
+    {
+      "id_provinsi": "Lampung",
+      "nama_provinsi": "Lampung",
+      "daftar_alat": [
+        { "nama_alat": "Bende", "deskripsi": "Bende adalah sejenis gong kecil yang digunakan untuk memberi tanda atau sebagai penanda ritme dalam musik tradisional Lampung.", "gambar": "bende.png" }
+      ]
+    },
+    {
+      "id_provinsi": "Banten",
+      "nama_provinsi": "Banten",
+      "daftar_alat": [
+        { "nama_alat": "Dogdog Lojor", "deskripsi": "Dogdog Lojor adalah sekelompok gendang panjang yang dimainkan untuk mengiringi ritual adat masyarakat Banten Kidul.", "gambar": "dogdog_lojor.png" }
+      ]
+    },
+    {
+      "id_provinsi": "JakartaRaya",
+      "nama_provinsi": "DKI Jakarta",
+      "daftar_alat": [
+        { "nama_alat": "Tehyan", "deskripsi": "Tehyan adalah alat musik gesek dari tradisi Betawi yang mendapat pengaruh Tionghoa.", "gambar": "tehyan.png" },
+        { "nama_alat": "Gambang Kromong", "deskripsi": "Gambang Kromong adalah sebuah orkes musik yang memadukan unsur Gamelan dan Tionghoa.", "gambar": "gambang_kromong.png" }
+      ]
+    },
+    {
+      "id_provinsi": "JawaBarat",
+      "nama_provinsi": "Jawa Barat",
+      "daftar_alat": [
+        { "nama_alat": "Angklung", "deskripsi": "Angklung adalah alat musik multitonal yang terbuat dari bambu.", "gambar": "angklung.png" },
+        { "nama_alat": "Kecapi", "deskripsi": "Kecapi adalah alat musik dawai yang dimainkan dengan cara dipetik.", "gambar": "kecapi.png" }
+      ]
+    },
+    {
+      "id_provinsi": "JawaTengah",
+      "nama_provinsi": "Jawa Tengah",
+      "daftar_alat": [
+        { "nama_alat": "Gamelan", "deskripsi": "Gamelan adalah ensembel musik yang menonjolkan metalofon, gambang, dan gong.", "gambar": "gamelan.jpg" },
+        { "nama_alat": "Siter", "deskripsi": "Siter adalah alat musik petik dalam Gamelan dengan 11 hingga 13 pasang senar.", "gambar": "siter.jpg" }
+      ]
+    },
+    {
+      "id_provinsi": "Yogyakarta",
+      "nama_provinsi": "D.I. Yogyakarta",
+      "daftar_alat": [
+        { "nama_alat": "Gendang", "deskripsi": "Gendang atau kendhang adalah instrumen dalam gamelan yang fungsi utamanya mengatur irama.", "gambar": "gendang.jpg" }
+      ]
+    },
+    {
+      "id_provinsi": "JawaTimur",
+      "nama_provinsi": "Jawa Timur",
+      "daftar_alat": [
+        { "nama_alat": "Bonang", "deskripsi": "Bonang adalah satu set gong kecil yang ditempatkan secara horizontal.", "gambar": "bonang.png" }
+      ]
+    },
+    {
+      "id_provinsi": "Bali",
+      "nama_provinsi": "Bali",
+      "daftar_alat": [
+        { "nama_alat": "Rindik", "deskripsi": "Rindik adalah alat musik pukul yang terbuat dari bilah-bilah bambu.", "gambar": "rindik.png" },
+        { "nama_alat": "Ceng-Ceng", "deskripsi": "Ceng-ceng adalah sepasang simbal yang digunakan untuk menandai ritme dalam Gamelan Bali.", "gambar": "ceng_ceng.png" }
+      ]
+    },
+    {
+      "id_provinsi": "NusaTenggaraBarat",
+      "nama_provinsi": "Nusa Tenggara Barat",
+      "daftar_alat": [
+        { "nama_alat": "Gendang Beleq", "deskripsi": "Gendang Beleq berarti 'gendang besar' yang dimainkan secara berkelompok oleh suku Sasak di Lombok.", "gambar": "gendang_beleq.png" }
+      ]
+    },
+    {
+      "id_provinsi": "NusaTenggaraTimur",
+      "nama_provinsi": "Nusa Tenggara Timur",
+      "daftar_alat": [
+        { "nama_alat": "Sasando", "deskripsi": "Sasando adalah alat musik petik dari Pulau Rote yang terbuat dari daun lontar.", "gambar": "sasando.png" }
+      ]
+    },
+    {
+      "id_provinsi": "KalimantanBarat",
+      "nama_provinsi": "Kalimantan Barat",
+      "daftar_alat": [
+        { "nama_alat": "Tuma", "deskripsi": "Tuma adalah sejenis gendang panjang dari suku Dayak Iban yang dimainkan dengan telapak tangan.", "gambar": "tuma.png" }
+      ]
+    },
+    {
+      "id_provinsi": "KalimantanTengah",
+      "nama_provinsi": "Kalimantan Tengah",
+      "daftar_alat": [
+        { "nama_alat": "Japen", "deskripsi": "Japen adalah alat musik petik yang mirip dengan kecapi, sering digunakan dalam mengiringi tarian dan lagu daerah.", "gambar": "japen.png" }
+      ]
+    },
+    {
+      "id_provinsi": "KalimantanSelatan",
+      "nama_provinsi": "Kalimantan Selatan",
+      "daftar_alat": [
+        { "nama_alat": "Panting", "deskripsi": "Panting adalah alat musik petik yang mirip gambus dan menjadi ciri khas musik Suku Banjar.", "gambar": "panting.png" }
+      ]
+    },
+    {
+      "id_provinsi": "KalimantanTimur",
+      "nama_provinsi": "Kalimantan Timur",
+      "daftar_alat": [
+        { "nama_alat": "Sampek", "deskripsi": "Sampek adalah alat musik petik tradisional Suku Dayak yang memiliki 3 hingga 6 dawai.", "gambar": "sampek.png" }
+      ]
+    },
+    {
+      "id_provinsi": "KalimantanUtara",
+      "nama_provinsi": "Kalimantan Utara",
+      "daftar_alat": [
+        { "nama_alat": "Gambang", "deskripsi": "Gambang adalah alat musik pukul yang terbuat dari bilah-bilah kayu, mirip dengan xilofon.", "gambar": "gambang.png" }
+      ]
+    },
+    {
+      "id_provinsi": "SulawesiUtara",
+      "nama_provinsi": "Sulawesi Utara",
+      "daftar_alat": [
+        { "nama_alat": "Kolintang", "deskripsi": "Kolintang adalah alat musik pukul dari kayu yang disusun secara melodis, dimainkan secara ansambel.", "gambar": "kolintang.png" }
+      ]
+    },
+    {
+      "id_provinsi": "Gorontalo",
+      "nama_provinsi": "Gorontalo",
+      "daftar_alat": [
+        { "nama_alat": "Polopalo", "deskripsi": "Polopalo adalah alat musik perkusi yang terbuat dari bambu dan tempurung kelapa, dimainkan dengan cara digoyangkan.", "gambar": "polopalo.png" }
+      ]
+    },
+    {
+      "id_provinsi": "SulawesiTengah",
+      "nama_provinsi": "Sulawesi Tengah",
+      "daftar_alat": [
+        { "nama_alat": "Lalove", "deskripsi": "Lalove adalah suling hidung tradisional dari Lembah Palu yang digunakan dalam upacara adat Balia.", "gambar": "lalove.png" }
+      ]
+    },
+    {
+      "id_provinsi": "SulawesiBarat",
+      "nama_provinsi": "Sulawesi Barat",
+      "daftar_alat": [
+        { "nama_alat": "Kecapi Mandar", "deskripsi": "Kecapi Mandar adalah kecapi perahu khas Suku Mandar yang memiliki dua dawai.", "gambar": "kecapi_mandar.png" }
+      ]
+    },
+    {
+      "id_provinsi": "SulawesiSelatan",
+      "nama_provinsi": "Sulawesi Selatan",
+      "daftar_alat": [
+        { "nama_alat": "Keso-Keso", "deskripsi": "Keso-keso adalah alat musik gesek dari suku Bugis dan Makassar.", "gambar": "keso_keso.png" }
+      ]
+    },
+    {
+      "id_provinsi": "SulawesiTenggara",
+      "nama_provinsi": "Sulawesi Tenggara",
+      "daftar_alat": [
+        { "nama_alat": "Ladolado", "deskripsi": "Ladolado adalah alat musik pukul sejenis xilofon yang terbuat dari kayu.", "gambar": "ladolado.png" }
+      ]
+    },
+    {
+      "id_provinsi": "Maluku",
+      "nama_provinsi": "Maluku",
+      "daftar_alat": [
+        { "nama_alat": "Tifa", "deskripsi": "Tifa adalah gendang khas Maluku yang menjadi instrumen utama dalam banyak musik tradisional.", "gambar": "tifa.png" }
+      ]
+    },
+    {
+      "id_provinsi": "MalukuUtara",
+      "nama_provinsi": "Maluku Utara",
+      "daftar_alat": [
+        { "nama_alat": "Fu", "deskripsi": "Fu adalah alat musik tiup yang terbuat dari cangkang kerang besar.", "gambar": "fu.png" }
+      ]
+    },
+    {
+      "id_provinsi": "PapuaBarat",
+      "nama_provinsi": "Papua Barat",
+      "daftar_alat": [
+        { "nama_alat": "Guoto", "deskripsi": "Guoto adalah alat musik petik dari Suku Wandamen yang terbuat dari kulit labu dan memiliki satu senar.", "gambar": "guoto.png" }
+      ]
+    },
+    {
+      "id_provinsi": "Papua",
+      "nama_provinsi": "Papua",
+      "daftar_alat": [
+        { "nama_alat": "Tifa", "deskripsi": "Tifa adalah gendang khas Papua yang berbentuk seperti tabung dan sering diukir indah.", "gambar": "tifa.png" }
+      ]
+    },
+    {
+      "id_provinsi": "PapuaSelatan",
+      "nama_provinsi": "Papua Selatan",
+      "daftar_alat": [
+        { "nama_alat": "Tifa", "deskripsi": "Tifa dari Suku Asmat dan Marind di Papua Selatan dikenal dengan ukiran dan bentuknya yang khas.", "gambar": "tifa_selatan.png" }
+      ]
+    },
+    {
+      "id_provinsi": "PapuaTengah",
+      "nama_provinsi": "Papua Tengah",
+      "daftar_alat": [
+        { "nama_alat": "Atowo", "deskripsi": "Atowo adalah alat musik pukul sejenis gendang kecil yang digunakan oleh Suku Kamoro.", "gambar": "atowo.png" }
+      ]
+    },
+    {
+      "id_provinsi": "PapuaPegunungan",
+      "nama_provinsi": "Papua Pegunungan",
+      "daftar_alat": [
+        { "nama_alat": "Pikon", "deskripsi": "Pikon adalah alat musik getar mulut yang sangat kecil, dimainkan oleh suku Dani di Lembah Baliem.", "gambar": "pikon.png" }
+      ]
+    },
+    {
+      "id_provinsi": "PapuaBaratDaya",
+      "nama_provinsi": "Papua Barat Daya",
+      "daftar_alat": [
+        { "nama_alat": "Tifa", "deskripsi": "Tifa dari wilayah Raja Ampat sering digunakan untuk mengiringi tarian penyambutan dan upacara adat.", "gambar": "tifa_barat_daya.png" }
+      ]
+    }
+  ]
+}

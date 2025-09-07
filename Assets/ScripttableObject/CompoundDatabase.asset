@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9985adcd375b7a344bde1553664f0930, type: 3}
+  m_Name: CompoundDatabase
+  m_EditorClassIdentifier: 
+  compounds:
+  - nameCompound: 'Air '
+    formula: "H\u2082O"
+    requiredElements:
+    - H
+    - H
+    - O
+    prefabResult: {fileID: 100188441129004643, guid: c013fee1871efe34f91828189a32c430, type: 3}
+  - nameCompound: Oksigen Molekul
+    formula: "O\u2082"
+    requiredElements:
+    - O
+    - O
+    prefabResult: {fileID: 100188441129004643, guid: d808402fc59f4c846bd79183672dcd89, type: 3}
+  - nameCompound: Nitrogen Molekul
+    formula: "N\u2082"
+    requiredElements:
+    - N
+    - N
+    prefabResult: {fileID: 100188441129004643, guid: f655b49602783774ebaf342ebe33c092, type: 3}
+  - nameCompound: Karbon Dioksida
+    formula: "CO\u2082"
+    requiredElements:
+    - C
+    - O
+    - O
+    prefabResult: {fileID: 100188441129004643, guid: 303bb59c71c17304f9ed9c6b124b24b6, type: 3}
+  - nameCompound: Garam Dapur
+    formula: NaCl
+    requiredElements:
+    - Na
+    - Cl
+    prefabResult: {fileID: 100188441129004643, guid: ff288b0547df7be47af136b363876c4b, type: 3}
+  - nameCompound: Karat Besi
+    formula: "Fe\u2082O\u2083"
+    requiredElements:
+    - Fe
+    - O
+    - O
+    prefabResult: {fileID: 100188441129004643, guid: a6ffefeb43939e74fac57254d37f5634, type: 3}
+  - nameCompound: Sulfur Dioksida
+    formula: "SO\u2082"
+    requiredElements:
+    - S
+    - O
+    - O
+    prefabResult: {fileID: 100188441129004643, guid: 404ea18ddede02a4da60cd03f232bdb4, type: 3}
+  - nameCompound: Metana
+    formula: "CH\u2084"
+    requiredElements:
+    - C
+    - H
+    - H
+    prefabResult: {fileID: 100188441129004643, guid: cdad3a9b21bbc2243b596573263bcaa5, type: 3}
+  - nameCompound: Asam Sulfat
+    formula: "H\u2082SO\u2084"
+    requiredElements:
+    - H
+    - H
+    - S
+    - O
+    - O
+    - O
+    - O
+    prefabResult: {fileID: 100188441129004643, guid: 04ca49ed96dd0e64c813f85123e20d67, type: 3}
+  - nameCompound: Glukosa
+    formula: "C\u2086H\u2081\u2082O\u2086"
+    requiredElements:
+    - C
+    - H
+    - O
+    prefabResult: {fileID: 100188441129004643, guid: e01f70eeb7cec31478ab25247cbb668c, type: 3}

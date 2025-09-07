@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0ded53b4a656f44188e93fe31f193684
+timeCreated: 1475909011
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 73036
+  packageName: Mobile Speech Recognizer
+  packageVersion: 1.3.6
+  assetPath: Assets/KKSpeechRecognizer/readme.pdf
+  uploadId: 452389

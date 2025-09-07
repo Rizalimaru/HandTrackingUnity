@@ -1,0 +1,139 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 848409ee8ba454f42a5ddff137688a27, type: 3}
+  m_Name: Stick
+  m_EditorClassIdentifier: 
+  m_GuidLow: 5619345503240268597
+  m_GuidHigh: 11058205434602840708
+  m_DataStore:
+    m_Storage: []
+  m_Images:
+  - m_SerializedGuid:
+      m_GuidLow: 5059131232780950307
+      m_GuidHigh: 12286527538900869288
+    m_SerializedTextureGuid:
+      m_GuidLow: 9620871038512326025
+      m_GuidHigh: 7952104836308717115
+    m_Size: {x: 0, y: 0}
+    m_SpecifySize: 0
+    m_Name: Angklung
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 4646246641700190160
+      m_GuidHigh: 13867946836530351526
+    m_SerializedTextureGuid:
+      m_GuidLow: 18110205461680497913
+      m_GuidHigh: 11807866258713622249
+    m_Size: {x: 0, y: 0}
+    m_SpecifySize: 0
+    m_Name: Aramba
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5455880728347789241
+      m_GuidHigh: 5239215789453147533
+    m_SerializedTextureGuid:
+      m_GuidLow: 14169667515640038380
+      m_GuidHigh: 15005416150374434233
+    m_Size: {x: 0, y: 0}
+    m_SpecifySize: 0
+    m_Name: Celembung
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5457180993772510110
+      m_GuidHigh: 12448205535219226539
+    m_SerializedTextureGuid:
+      m_GuidLow: 5207410535221739945
+      m_GuidHigh: 5004048622709955816
+    m_Size: {x: 0, y: 0}
+    m_SpecifySize: 0
+    m_Name: Demung
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 4718626437332491515
+      m_GuidHigh: 6972855931529596291
+    m_SerializedTextureGuid:
+      m_GuidLow: 16452919789202848895
+      m_GuidHigh: 16795931815384817016
+    m_Size: {x: 0, y: 0}
+    m_SpecifySize: 0
+    m_Name: Gendang
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5087622820334466268
+      m_GuidHigh: 10035973054158480256
+    m_SerializedTextureGuid:
+      m_GuidLow: 4820036423282489347
+      m_GuidHigh: 5429458572832094587
+    m_Size: {x: 0, y: 0}
+    m_SpecifySize: 0
+    m_Name: Gong
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5395537786587293160
+      m_GuidHigh: 4147384489403051672
+    m_SerializedTextureGuid:
+      m_GuidLow: 17389786854960587113
+      m_GuidHigh: 4678491102013258712
+    m_Size: {x: 0, y: 0}
+    m_SpecifySize: 0
+    m_Name: Kolintang
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 4865560472390364451
+      m_GuidHigh: 11279570955235700638
+    m_SerializedTextureGuid:
+      m_GuidLow: 12705918069084376853
+      m_GuidHigh: 17081639619959394488
+    m_Size: {x: 0, y: 0}
+    m_SpecifySize: 0
+    m_Name: Sasando
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 4888668119832157004
+      m_GuidHigh: 16159693482826038145
+    m_SerializedTextureGuid:
+      m_GuidLow: 1861337162246037021
+      m_GuidHigh: 7106828349012524762
+    m_Size: {x: 0, y: 0}
+    m_SpecifySize: 0
+    m_Name: Serunai
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 4851898587766674892
+      m_GuidHigh: 6978250322731440315
+    m_SerializedTextureGuid:
+      m_GuidLow: 14989304096935710505
+      m_GuidHigh: 365155067013999096
+    m_Size: {x: 0, y: 0}
+    m_SpecifySize: 0
+    m_Name: Suling
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 4760672745056680084
+      m_GuidHigh: 8111404828892897435
+    m_SerializedTextureGuid:
+      m_GuidLow: 13512072252007693725
+      m_GuidHigh: 14664722669482987755
+    m_Size: {x: 0, y: 0}
+    m_SpecifySize: 0
+    m_Name: Talindo
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 4766822565813820221
+      m_GuidHigh: 4935519191189893551
+    m_SerializedTextureGuid:
+      m_GuidLow: 91349362359390304
+      m_GuidHigh: 6262665124649018123
+    m_Size: {x: 0, y: 0}
+    m_SpecifySize: 0
+    m_Name: Tifa
+    m_Texture: {fileID: 0}

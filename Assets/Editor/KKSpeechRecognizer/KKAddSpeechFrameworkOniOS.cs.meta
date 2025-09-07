@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: c64896eb56a064b4f9585d36eadef448
+timeCreated: 1475878499
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 73036
+  packageName: Mobile Speech Recognizer
+  packageVersion: 1.3.6
+  assetPath: Assets/Editor/KKSpeechRecognizer/KKAddSpeechFrameworkOniOS.cs
+  uploadId: 452389

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 559332467ea974437a4d905a158faa1a
+timeCreated: 1479690040
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 73036
+  packageName: Mobile Speech Recognizer
+  packageVersion: 1.3.6
+  assetPath: Assets/KKSpeechRecognizer/Example/SetLanguage.unity
+  uploadId: 452389
