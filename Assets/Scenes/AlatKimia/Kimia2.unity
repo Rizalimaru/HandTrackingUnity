@@ -2057,10 +2057,18 @@ MonoBehaviour:
   trackedImageManager: {fileID: 2112787606}
   canSpawn: 1
   imagePrefabs:
+  - imageName: Cs
+    prefab: {fileID: 0}
+  - imageName: Fr
+    prefab: {fileID: 0}
+  - imageName: K
+    prefab: {fileID: 0}
+  - imageName: Li
+    prefab: {fileID: 0}
   - imageName: Na
-    prefab: {fileID: 5951164043895855577, guid: 349ebcd9d96c6564d9d608664e29c55d, type: 3}
-  - imageName: O
-    prefab: {fileID: 5202477167800196869, guid: d332f436f3dcac3409ea6e6ece5d9a99, type: 3}
+    prefab: {fileID: 0}
+  - imageName: Rb
+    prefab: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
