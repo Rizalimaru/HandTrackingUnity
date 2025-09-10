@@ -5,15 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/AlatKimia/Kimia1.unity
+    guid: cdec5acc28e1cf44aabc8566625dee08
   - enabled: 1
-    path: Assets/Scenes/MainMenuAlatMusik.unity
-    guid: 453ec7bf6d48b5849a40dfb69b9eebef
-  - enabled: 1
-    path: Assets/Scenes/AR.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
-    path: Assets/Scenes/MapAlatMusikDaerah.unity
-    guid: c681f7362b37153428f147ca5bb9a708
+    path: Assets/Scenes/AlatKimia/Kimia2.unity
+    guid: 75efcfa04b7fe3f4cbb275541fec4494
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 29a6510c839503e42ba5cfe8b77c4798, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

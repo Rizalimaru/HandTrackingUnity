@@ -11,6 +11,8 @@ TagManager:
   - Element
   - Ground
   - Couldrown
+  - Wadah
+  - Atom
   layers:
   - Default
   - TransparentFX
