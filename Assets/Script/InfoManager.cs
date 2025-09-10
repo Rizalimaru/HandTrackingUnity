@@ -159,7 +159,20 @@ public class InfoManager : MonoBehaviour
 
                 imageTransform.GetComponent<Image>().sprite = LoadSpriteFromResources(instrument.gambar);
                 newItem.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = instrument.nama_alat;
-                
+
+                // Tambahan: Set NamaProvinsi
+                var namaProvinsiObj = newItem.transform.Find("NamaProvinsi");
+                if (namaProvinsiObj != null)
+                {
+                    var namaProvinsiText = namaProvinsiObj.GetComponent<TextMeshProUGUI>();
+                    if (namaProvinsiText != null)
+                        namaProvinsiText.text = data.nama_provinsi;
+                }
+                else
+                {
+                    Debug.LogWarning("Prefab tidak memiliki child 'NamaProvinsi'.");
+                }
+
                 itemButton.onClick.AddListener(() =>
                 {
                     ShowDetailPanel(instrument);

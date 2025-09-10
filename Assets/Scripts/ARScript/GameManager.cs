@@ -68,6 +68,9 @@ public class GameManager : MonoBehaviour
     // Dipanggil oleh ObjectSpawner setelah alat musik muncul
     public void ShowQuestion(string instrumentName)
     {
+        if (string.IsNullOrEmpty(instrumentName))
+            return;
+
         // Cek jumlah QR aktif
         var spawner = FindFirstObjectByType<ObjectSpawner>();
         var activeQrs = spawner != null ? spawner.GetActiveInstrumentNames() : new List<string>();
@@ -213,7 +216,7 @@ public class GameManager : MonoBehaviour
                     spawnedOrchestras.Add(ork);
 
                     // Tampilkan panel orkestra
-                    ShowOrchestraPanel(group.groupName);
+                    StartCoroutine(ShowOrchestraPanelWithDelay(group.groupName, 1f)); // 1 detik delay
                 }
                 else
                 {
@@ -297,5 +300,20 @@ public class GameManager : MonoBehaviour
         questionText.text = isEnglish
             ? $"This is the {orchestraName} orchestra!"
             : $"Ini adalah orkestra {orchestraName}!";
+    }
+
+    // Tambahkan fungsi untuk menyembunyikan panel pertanyaan
+    public void HideQuestionPanel()
+    {
+        questionPanel.SetActive(false);
+        answerButton.SetActive(false);
+        textDebug.SetActive(false);
+        resetButton.SetActive(true);
+    }
+
+    private IEnumerator ShowOrchestraPanelWithDelay(string orchestraName, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        ShowOrchestraPanel(orchestraName);
     }
 }

@@ -57,13 +57,17 @@ public class ObjectSpawner : MonoBehaviour
 
         foreach (var trackedImage in eventArgs.updated)
         {
+            string key = trackedImage.referenceImage.name;
             if (trackedImage.trackingState == TrackingState.Tracking)
             {
+                // Jika prefab belum ada (misal setelah reset), spawn ulang
+                if (!spawnedPrefabs.ContainsKey(key))
+                    SpawnPrefab(trackedImage);
+
                 UpdatePrefabPose(trackedImage);
             }
             else
             {
-                string key = trackedImage.referenceImage.name;
                 if (spawnedPrefabs.TryGetValue(key, out var go))
                     go.SetActive(false);
             }
@@ -89,8 +93,8 @@ public class ObjectSpawner : MonoBehaviour
             var activeNames = GetActiveInstrumentNames();
             if (activeNames.Count == 1)
                 gm.ShowQuestion(activeNames[0]);
-            else
-                gm.ShowQuestion(""); // Akan auto-hide question
+            else if (activeNames.Count == 0)
+                gm.HideQuestionPanel();
 
             // Cek orkestra
             gm.CheckOrchestra();

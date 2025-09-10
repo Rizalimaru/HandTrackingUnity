@@ -21,8 +21,8 @@ MonoBehaviour:
       m_GuidLow: 5539731768872012922
       m_GuidHigh: 15612149916976556672
     m_SerializedTextureGuid:
-      m_GuidLow: 5567793206204575616
-      m_GuidHigh: 11862424597559167208
+      m_GuidLow: 17160039430273536823
+      m_GuidHigh: 12477098723778623531
     m_Size: {x: 0, y: 0}
     m_SpecifySize: 0
     m_Name: Angklung
@@ -31,8 +31,8 @@ MonoBehaviour:
       m_GuidLow: 5613131564500116109
       m_GuidHigh: 12370946329268487086
     m_SerializedTextureGuid:
-      m_GuidLow: 8769647663806562338
-      m_GuidHigh: 10481898129334727848
+      m_GuidLow: 5946139612345980100
+      m_GuidHigh: 786623415623804779
     m_Size: {x: 0, y: 0}
     m_SpecifySize: 0
     m_Name: Aramba
@@ -41,8 +41,8 @@ MonoBehaviour:
       m_GuidLow: 5404381793698515874
       m_GuidHigh: 11602570661742731934
     m_SerializedTextureGuid:
-      m_GuidLow: 15331398829847725304
-      m_GuidHigh: 1096003322277233851
+      m_GuidLow: 10143428543154204964
+      m_GuidHigh: 14066239120688146088
     m_Size: {x: 0, y: 0}
     m_SpecifySize: 0
     m_Name: Celempung
@@ -51,8 +51,8 @@ MonoBehaviour:
       m_GuidLow: 5710315783255206470
       m_GuidHigh: 1774646129175684529
     m_SerializedTextureGuid:
-      m_GuidLow: 10269482495330626935
-      m_GuidHigh: 11380767786753302619
+      m_GuidLow: 474175426507066250
+      m_GuidHigh: 13058025560184596299
     m_Size: {x: 0, y: 0}
     m_SpecifySize: 0
     m_Name: Demung
@@ -61,8 +61,8 @@ MonoBehaviour:
       m_GuidLow: 4901943939229780555
       m_GuidHigh: 4231673991949489821
     m_SerializedTextureGuid:
-      m_GuidLow: 10994499343387982367
-      m_GuidHigh: 17975668405271210202
+      m_GuidLow: 4631052409259729816
+      m_GuidHigh: 8420075050662973433
     m_Size: {x: 0, y: 0}
     m_SpecifySize: 0
     m_Name: Gendang
@@ -71,8 +71,8 @@ MonoBehaviour:
       m_GuidLow: 5105303009671057410
       m_GuidHigh: 10107074284579858879
     m_SerializedTextureGuid:
-      m_GuidLow: 18128163451478070193
-      m_GuidHigh: 4499888388403581369
+      m_GuidLow: 3743834290282934365
+      m_GuidHigh: 4797320662043692955
     m_Size: {x: 0, y: 0}
     m_SpecifySize: 0
     m_Name: Gong
@@ -81,8 +81,8 @@ MonoBehaviour:
       m_GuidLow: 5604990152218344284
       m_GuidHigh: 9672698129728651708
     m_SerializedTextureGuid:
-      m_GuidLow: 15466574575032284357
-      m_GuidHigh: 13774387083376762665
+      m_GuidLow: 14840578494862548257
+      m_GuidHigh: 12926315274978032201
     m_Size: {x: 0, y: 0}
     m_SpecifySize: 0
     m_Name: Kolitang
@@ -91,8 +91,8 @@ MonoBehaviour:
       m_GuidLow: 5269918435989377102
       m_GuidHigh: 16650931595905389245
     m_SerializedTextureGuid:
-      m_GuidLow: 14637879703299943404
-      m_GuidHigh: 1131143501526286136
+      m_GuidLow: 11688071777575055497
+      m_GuidHigh: 18355790185227479336
     m_Size: {x: 0, y: 0}
     m_SpecifySize: 0
     m_Name: Sasando
@@ -101,8 +101,8 @@ MonoBehaviour:
       m_GuidLow: 5242874963657868089
       m_GuidHigh: 235360979004472203
     m_SerializedTextureGuid:
-      m_GuidLow: 11422511671830651869
-      m_GuidHigh: 11542325565033860715
+      m_GuidLow: 379453649809886683
+      m_GuidHigh: 9567491704063789513
     m_Size: {x: 0, y: 0}
     m_SpecifySize: 0
     m_Name: Serunai
@@ -111,8 +111,8 @@ MonoBehaviour:
       m_GuidLow: 5355545380867204982
       m_GuidHigh: 6225217742677040031
     m_SerializedTextureGuid:
-      m_GuidLow: 13989470586829445299
-      m_GuidHigh: 3554580916613839162
+      m_GuidLow: 4644506507042960163
+      m_GuidHigh: 5825061446861022216
     m_Size: {x: 0, y: 0}
     m_SpecifySize: 0
     m_Name: Suling
@@ -121,8 +121,8 @@ MonoBehaviour:
       m_GuidLow: 5351826406171984241
       m_GuidHigh: 6251460198869017009
     m_SerializedTextureGuid:
-      m_GuidLow: 17569817747658028089
-      m_GuidHigh: 9609625505505609707
+      m_GuidLow: 2149415850367604141
+      m_GuidHigh: 16732045680985178216
     m_Size: {x: 0, y: 0}
     m_SpecifySize: 0
     m_Name: Talindo
@@ -131,8 +131,8 @@ MonoBehaviour:
       m_GuidLow: 4941301650811186016
       m_GuidHigh: 17491269261946610326
     m_SerializedTextureGuid:
-      m_GuidLow: 14926238985572719326
-      m_GuidHigh: 2549381406200029368
+      m_GuidLow: 16772804465882701979
+      m_GuidHigh: 18431163530988494057
     m_Size: {x: 0, y: 0}
     m_SpecifySize: 0
     m_Name: Tifa
