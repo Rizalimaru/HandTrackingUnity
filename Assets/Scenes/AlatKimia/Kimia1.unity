@@ -393,7 +393,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &691694488
 RectTransform:
   m_ObjectHideFlags: 0
@@ -669,7 +669,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1030912551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1178,7 +1178,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1636798938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1477,6 +1477,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnWadah
       objectReference: {fileID: 0}
+    - target: {fileID: 689176690913129452, guid: ff9d4528013470a459451edf4905e3db, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8899495399798015043, guid: ff9d4528013470a459451edf4905e3db, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1542,7 +1546,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2112787602
 MonoBehaviour:
   m_ObjectHideFlags: 0
