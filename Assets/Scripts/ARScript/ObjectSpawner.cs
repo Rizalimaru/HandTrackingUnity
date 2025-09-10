@@ -160,24 +160,6 @@ public class ObjectSpawner : MonoBehaviour
         spawnedPrefabs.Clear();
     }
 
-    public void ResetScanning()
-{
-    // Hapus semua objek yang telah di-spawn
-    ClearAllSpawnedObjects();
-
-    // Nonaktifkan dan aktifkan kembali ARTrackedImageManager untuk memaksa refresh
-    if (trackedImageManager != null)
-    {
-        trackedImageManager.enabled = false;
-        trackedImageManager.enabled = true;
-    }
-
-    // Izinkan proses scanning dimulai ulang
-    canSpawn = true;
-
-    Debug.Log("Scanning telah di-reset.");
-}
-
     public GameObject GetSpawnedInstrument(string instrumentName)
     {
         if (spawnedPrefabs.TryGetValue(instrumentName, out var go))

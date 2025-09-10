@@ -92,7 +92,7 @@ public bool TryClickAtom(AtomInteraction clickedAtom)
     }
 
     // Kalau urutan salah
-    UIManager.Instance.ShowSalah();
+    //UIManager.Instance.ShowSalah();
     return false;
 }
 

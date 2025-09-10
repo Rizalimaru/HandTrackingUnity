@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using NUnit.Framework;
 
 public class UIManager : MonoBehaviour
 {
@@ -8,7 +9,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject uiSalah;
     [SerializeField] private GameObject uiBenar;
 
+
+    [SerializeField] private GameObject Hasil;
+
     [SerializeField] private TextMeshProUGUI textHasil;
+
+
 
     [Header("UI Atom Info")]
     [SerializeField] private GameObject atomInfoPanel;
@@ -21,7 +27,7 @@ public class UIManager : MonoBehaviour
     public void ShowSalah()
     {
         if (uiSalah != null) uiSalah.SetActive(true);
-        Invoke("HideSalah", 2f);
+        Invoke("HideSalah", 1f);
     }
 
     void HideSalah() { if (uiSalah != null) uiSalah.SetActive(false); }
@@ -33,16 +39,14 @@ public class UIManager : MonoBehaviour
 
     public void SetHasilText(string text)
     {
-        if (textHasil != null)
-        {
-            textHasil.gameObject.SetActive(true);
-            textHasil.text = text;
-        }
+        Hasil.SetActive(true);
+        textHasil.text = text;
+
     }
 
     public void HideBenar()
     {
-        textHasil.gameObject.SetActive(false);
+        Hasil.SetActive(false);
     }
 
     // 👇 Tambahan baru
