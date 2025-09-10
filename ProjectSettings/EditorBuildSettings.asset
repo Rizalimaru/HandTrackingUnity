@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/AlatKimia/Kimia1.unity
     guid: cdec5acc28e1cf44aabc8566625dee08
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/AlatKimia/Kimia2.unity
     guid: 75efcfa04b7fe3f4cbb275541fec4494
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/AR.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:
