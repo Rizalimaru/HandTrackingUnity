@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19ad81bcc013c684c94b02a519e500b9, type: 3}
-  m_Name: AR
+  m_Name: Ar
   m_EditorClassIdentifier: 
-  atomName: 
-  fullName: 
-  group: 
-  description: 
+  atomName: Ar
+  fullName: Argon
+  group: 8A
+  description: Gas inert, dipakai di lampu & las
   icon: {fileID: 0}
   displayColor: {r: 1, g: 1, b: 1, a: 1}

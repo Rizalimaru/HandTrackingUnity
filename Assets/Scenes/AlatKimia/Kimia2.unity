@@ -1815,7 +1815,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -132, y: -381}
+  m_AnchoredPosition: {x: 61, y: -381}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2028027689
@@ -2058,17 +2058,107 @@ MonoBehaviour:
   canSpawn: 1
   imagePrefabs:
   - imageName: Cs
-    prefab: {fileID: 0}
+    prefab: {fileID: 8029301065626425358, guid: d740e6b98ae59384881a34f762725992, type: 3}
   - imageName: Fr
-    prefab: {fileID: 0}
+    prefab: {fileID: 2505410465639858701, guid: 49265b52082d968418989d7e57ccb40a, type: 3}
   - imageName: K
-    prefab: {fileID: 0}
+    prefab: {fileID: 6470338669578888246, guid: 5f4d7e5525a83b54880b2e40cd285046, type: 3}
   - imageName: Li
-    prefab: {fileID: 0}
+    prefab: {fileID: 8652937427865189734, guid: 1bb2741702d70124ab4301725fb75a21, type: 3}
   - imageName: Na
-    prefab: {fileID: 0}
+    prefab: {fileID: 5951164043895855577, guid: 349ebcd9d96c6564d9d608664e29c55d, type: 3}
   - imageName: Rb
-    prefab: {fileID: 0}
+    prefab: {fileID: 6161093098435763861, guid: aee0908fe2e8cd141903b6c009054d0f, type: 3}
+  - imageName: Ba
+    prefab: {fileID: 6412734693795649476, guid: 567b08f1a04429b48bc51956ce17f43a, type: 3}
+  - imageName: Be
+    prefab: {fileID: 6936236434982694403, guid: 6eb29148994dc4e45bd4dcdfc71d3b4a, type: 3}
+  - imageName: Ca
+    prefab: {fileID: 5230710534316433273, guid: 48317cda0cc39df4faf788ae46969bcb, type: 3}
+  - imageName: Mg
+    prefab: {fileID: 5043223891618230462, guid: 47d731ef1fc054c46acf44aacc7a4383, type: 3}
+  - imageName: Ra
+    prefab: {fileID: 9171838647719581250, guid: 4c421a2d58bbe1447963b392ea46908d, type: 3}
+  - imageName: Sr
+    prefab: {fileID: 2732787035911334105, guid: 298235f88e460174bb5f2560cda56c21, type: 3}
+  - imageName: Al
+    prefab: {fileID: 2732787035911334105, guid: 298235f88e460174bb5f2560cda56c21, type: 3}
+  - imageName: B
+    prefab: {fileID: 2732787035911334105, guid: 298235f88e460174bb5f2560cda56c21, type: 3}
+  - imageName: Sr
+    prefab: {fileID: 2732787035911334105, guid: 298235f88e460174bb5f2560cda56c21, type: 3}
+  - imageName: Ga
+    prefab: {fileID: 7170380646869962347, guid: e0355f1203fc01d4bb90b18d8ef81ad3, type: 3}
+  - imageName: In
+    prefab: {fileID: 1885912200659167672, guid: 3c1bdcf7bc77f1a469116955eef95508, type: 3}
+  - imageName: Nh
+    prefab: {fileID: 7946932269182329890, guid: d1a20e19d8bbae2439ca05974d7dca01, type: 3}
+  - imageName: Ti
+    prefab: {fileID: 3311518720764974492, guid: 51586922ffb34454198f6944acc30a96, type: 3}
+  - imageName: C
+    prefab: {fileID: 2779057155837781246, guid: 2fb1f6141ea0e9849be69c8e0bcfdd35, type: 3}
+  - imageName: Fl
+    prefab: {fileID: 5270905292408051103, guid: 07739a28f367ff34d9ecbafb40b8cd88, type: 3}
+  - imageName: Ge
+    prefab: {fileID: 793597470567869940, guid: ba21f1589f592b2449c5c053ca3e04d5, type: 3}
+  - imageName: Pb
+    prefab: {fileID: 1476235713080412659, guid: 9d445d7bfb3cb0c40aab77845e15762d, type: 3}
+  - imageName: Si
+    prefab: {fileID: 758013600111772793, guid: ef44faf89701f6b4dbf5e001cde3fc2f, type: 3}
+  - imageName: Sn
+    prefab: {fileID: 6428257868858320863, guid: 09b74a3ee52931f498ee9d4bbe3264a1, type: 3}
+  - imageName: As
+    prefab: {fileID: 9188203116241222419, guid: dae6b6fa7a8975445a71f00f7f7e25f2, type: 3}
+  - imageName: Bi
+    prefab: {fileID: 7566438592247656212, guid: ed25bce502b4e0a4db815a2a9de52b4c, type: 3}
+  - imageName: Mc
+    prefab: {fileID: 3997175779412544405, guid: 13a6d666e85b3f54fadd2e1191dab005, type: 3}
+  - imageName: N
+    prefab: {fileID: 8027215205774512849, guid: 3bb6ae100d684874ba5321f681155e92, type: 3}
+  - imageName: P
+    prefab: {fileID: 819687966937831789, guid: aebf0c129ba204c4994cf5cc6dd42106, type: 3}
+  - imageName: Sb
+    prefab: {fileID: 150073766140968074, guid: e1f15d160c697c042ae76ec88a0683da, type: 3}
+  - imageName: Lv
+    prefab: {fileID: 5322533120142179770, guid: f45a24f96e304ef479f5322f6ea17808, type: 3}
+  - imageName: Sb
+    prefab: {fileID: 150073766140968074, guid: e1f15d160c697c042ae76ec88a0683da, type: 3}
+  - imageName: O
+    prefab: {fileID: 5202477167800196869, guid: d332f436f3dcac3409ea6e6ece5d9a99, type: 3}
+  - imageName: Po
+    prefab: {fileID: 5348307522959564433, guid: 713925ffcf540444a8e504259a279ba6, type: 3}
+  - imageName: S
+    prefab: {fileID: 3092852239299948579, guid: 190fc80840f351447bbb97595ee934be, type: 3}
+  - imageName: Se
+    prefab: {fileID: 6547318788256716161, guid: c73ba06e3fa1fd749a551b67d24f8b25, type: 3}
+  - imageName: Te
+    prefab: {fileID: 8560262515688140864, guid: 058e1c7995ba5d344bdb7d3980497067, type: 3}
+  - imageName: At
+    prefab: {fileID: 2587969301658071596, guid: 65a77ea5967721547a34fd9a8110f5e1, type: 3}
+  - imageName: Br
+    prefab: {fileID: 2262845175742691736, guid: db3fc115fd2440949a6a7e2009fb2d29, type: 3}
+  - imageName: Cl
+    prefab: {fileID: 7942706717245394208, guid: e3ba3c4cd71e19a4b9d5b2a6f114ccc5, type: 3}
+  - imageName: F
+    prefab: {fileID: 2349225808291785916, guid: c64ce443ed398ac4a9065eeb532b7c38, type: 3}
+  - imageName: I
+    prefab: {fileID: 1305649414884896657, guid: 89e8293204ebf684fa65ffe06365661c, type: 3}
+  - imageName: Ts
+    prefab: {fileID: 1788558355586187559, guid: ee03dc08618db5c448b3ff72e40e37ea, type: 3}
+  - imageName: Ar
+    prefab: {fileID: 6359703307379407980, guid: 4ccb235269fc19345901890f8e5886b8, type: 3}
+  - imageName: He
+    prefab: {fileID: 1966440055123872747, guid: f3bc15d1d5cfc9741b0cd7ddd01e8da3, type: 3}
+  - imageName: Kr
+    prefab: {fileID: 967451370247579150, guid: d5ad9266851a78a4d9a7d541f2dc1e00, type: 3}
+  - imageName: Ne
+    prefab: {fileID: 6816617775638487050, guid: 47013103bed5de5429bbcfd26c67eb8b, type: 3}
+  - imageName: Og
+    prefab: {fileID: 6910626728729436933, guid: e04518e77aaf6664dab641f39facc390, type: 3}
+  - imageName: Rn
+    prefab: {fileID: 3428960239177155941, guid: f085ce1e3c846ed428e6248c47fc5cae, type: 3}
+  - imageName: Xe
+    prefab: {fileID: 918414626968234283, guid: e61c98f2985eaee47b400b16116c3482, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

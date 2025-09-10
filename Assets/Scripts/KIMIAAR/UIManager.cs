@@ -62,8 +62,6 @@ public class UIManager : MonoBehaviour
             if (atomDescText != null)
                 atomDescText.text = $"{data.description}\nGolongan: {data.group}";
 
-            if (atomIcon != null && data.icon != null)
-                atomIcon.sprite = data.icon;
         }
     }
 

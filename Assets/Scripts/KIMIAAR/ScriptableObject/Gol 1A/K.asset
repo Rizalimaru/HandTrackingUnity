@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19ad81bcc013c684c94b02a519e500b9, type: 3}
   m_Name: K
   m_EditorClassIdentifier: 
-  atomName: O
-  fullName: Oksigen
-  group: 5A
-  description: Bernapas
+  atomName: K
+  fullName: Kalium
+  group: 1A
+  description: Penting untuk tubuh (ion K+), ada di pisang
   icon: {fileID: 21300002, guid: 7ab74e659e1f0a34d9cfec21c478fc12, type: 3}
   displayColor: {r: 1, g: 1, b: 1, a: 1}
