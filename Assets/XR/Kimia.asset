@@ -21,9 +21,9 @@ MonoBehaviour:
       m_GuidLow: 4668316943959246241
       m_GuidHigh: 4335381141403076541
     m_SerializedTextureGuid:
-      m_GuidLow: 8517712457258931185
-      m_GuidHigh: 9207057307196728986
+      m_GuidLow: 2888020234172330548
+      m_GuidHigh: 16526422518279618683
     m_Size: {x: 0, y: 0}
     m_SpecifySize: 0
-    m_Name: Cesium
+    m_Name: Tong
     m_Texture: {fileID: 0}

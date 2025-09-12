@@ -1,7 +1,8 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using NUnit.Framework;
+using NUnit.Framework.Constraints;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -68,6 +69,19 @@ public class UIManager : MonoBehaviour
     public void HideAtomInfo()
     {
         if (atomInfoPanel != null)
-            atomInfoPanel.SetActive(false);
+        {
+            atomInfoPanel.SetActive(false); // Sembunyikan panel
+            Debug.Log("[DEBUG] Menyembunyikan panel info atom.");
+        }
     }
+
+    // Pindah scene
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
+
 }
+
+   
