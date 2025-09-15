@@ -1714,7 +1714,9 @@ GameObject:
   - component: {fileID: 2112787602}
   - component: {fileID: 2112787607}
   - component: {fileID: 2112787606}
+  - component: {fileID: 2112787609}
   - component: {fileID: 2112787608}
+  - component: {fileID: 2112787610}
   m_Layer: 0
   m_Name: AR Session
   m_TagString: Untagged
@@ -1916,6 +1918,31 @@ MonoBehaviour:
     prefab: {fileID: 3428960239177155941, guid: f085ce1e3c846ed428e6248c47fc5cae, type: 3}
   - imageName: Xe
     prefab: {fileID: 918414626968234283, guid: e61c98f2985eaee47b400b16116c3482, type: 3}
+--- !u!114 &2112787609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112787601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a0e9fadcae1aa94784828c0d2e8bea3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2112787610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112787601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ff0799f495da0841bacb5129528e1d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayBeforeRestart: 0.4
 --- !u!1001 &3533795708178022662
 PrefabInstance:
   m_ObjectHideFlags: 0

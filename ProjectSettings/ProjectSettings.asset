@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: MaulTechnology
-  productName: KimiaChild
+  companyName: RizalTech
+  productName: AlatMusikDaerah
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -143,6 +143,11 @@ PlayerSettings:
   bundleVersion: 0.1.0
   preloadedAssets:
   - {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  - {fileID: 1422921335204284571, guid: 0ae13bde80a46cd4881107a333ced6dc, type: 2}
+  - {fileID: -6562938318570613456, guid: f86b642bbb313744487ad6f679116140, type: 2}
+  - {fileID: 11400000, guid: e5a5c9532f2c7024e9281ac6204044e1, type: 2}
+  - {fileID: 4800000, guid: c9f956787b1d945e7b36e0516201fc76, type: 3}
+  - {fileID: 4800000, guid: 0945859e5a1034c2cb6dce53cb4fb899, type: 3}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1

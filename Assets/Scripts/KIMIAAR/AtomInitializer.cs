@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic; // Dibutuhkan untuk Dictionary dan List
 using System.Linq; // Dibutuhkan untuk .ToList()
 using System.Collections;
+using TMPro;
 
 public class AtomInitializer : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class AtomInitializer : MonoBehaviour
     [Header("Pengaturan Prefab dan Spawn")]
     public AtomPrefabMap[] atomLibrary;
     public Transform[] spawnPoints;
+    
 
     private Dictionary<string, GameObject> atomPrefabDict = new Dictionary<string, GameObject>();
 
@@ -23,6 +25,7 @@ public class AtomInitializer : MonoBehaviour
     }
 
     private int nextAtomIndex = 0; // atom target ke berapa yang harus diklik
+    public GameObject compoundTextParent;
 
 
     private List<AtomInteraction> correctAtomsClicked = new List<AtomInteraction>();
@@ -47,6 +50,15 @@ public class AtomInitializer : MonoBehaviour
     {
         targetCompound = possibleCompounds[Random.Range(0, possibleCompounds.Length)];
         Debug.Log($"Soal ronde ini adalah: {targetCompound}");
+        if (compoundTextParent != null)
+        {
+            compoundTextParent.SetActive(true);
+            TextMeshPro tmp = compoundTextParent.GetComponentInChildren<TextMeshPro>();
+            if (tmp != null)
+            {
+                tmp.text = $"Buat senyawa: {targetCompound}";
+            }
+        }
 
         correctAtomsClicked.Clear();
         nextAtomIndex = 0; // reset progress urutan klik

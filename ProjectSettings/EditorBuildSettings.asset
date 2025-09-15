@@ -15,6 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/AlatKimia/Kimia2.unity
     guid: 75efcfa04b7fe3f4cbb275541fec4494
   - enabled: 0
+    path: Assets/Scenes/MainMenuAlatMusik.unity
+    guid: 453ec7bf6d48b5849a40dfb69b9eebef
+  - enabled: 0
+    path: Assets/Scenes/MapAlatMusikDaerah.unity
+    guid: c681f7362b37153428f147ca5bb9a708
+  - enabled: 0
     path: Assets/Scenes/AR.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:
