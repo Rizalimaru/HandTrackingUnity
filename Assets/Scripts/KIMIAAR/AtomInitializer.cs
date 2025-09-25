@@ -50,6 +50,11 @@ public class AtomInitializer : MonoBehaviour
     {
         targetCompound = possibleCompounds[Random.Range(0, possibleCompounds.Length)];
         Debug.Log($"Soal ronde ini adalah: {targetCompound}");
+
+        // Tampilkan soal di UIManager
+        if (UIManager.Instance != null)
+            UIManager.Instance.ShowSoal(targetCompound);
+
         if (compoundTextParent != null)
         {
             compoundTextParent.SetActive(true);

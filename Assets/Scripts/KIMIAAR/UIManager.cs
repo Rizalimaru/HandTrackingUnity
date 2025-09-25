@@ -23,6 +23,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI atomDescText;
     [SerializeField] private Image atomIcon;
 
+    [Header("UI Soal")]
+    [SerializeField] private GameObject soalPanel;
+    [SerializeField] private TextMeshProUGUI soalText;
+
     void Awake() { Instance = this; }
 
     public void ShowSalah()
@@ -75,6 +79,23 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Menampilkan soal elemen yang akan dibuat.
+    /// </summary>
+    public void ShowSoal(string namaElemen)
+    {
+        Hasil.SetActive(true); // Gunakan background Hasil
+        textHasil.text = $"Buatlah elemen: <b>{namaElemen}</b>"; // Gunakan TextMeshProUGUI yang sama
+    }
+
+    /// <summary>
+    /// Menyembunyikan panel soal.
+    /// </summary>
+    public void HideSoal()
+    {
+        Hasil.SetActive(false); // Sembunyikan background Hasil
+    }
+
     // Pindah scene
     public void LoadScene(string sceneName)
     {
@@ -84,4 +105,4 @@ public class UIManager : MonoBehaviour
 
 }
 
-   
+

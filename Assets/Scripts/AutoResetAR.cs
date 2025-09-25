@@ -4,14 +4,18 @@ using UnityEngine.XR.ARFoundation;
 
 public class AutoResetAR : MonoBehaviour
 {
-    private void OnEnable()
+
+    public GameObject arSessioin;
+    IEnumerator Start()
     {
-        // Pastikan ARSession direset setiap kali scene aktif
-        var session = GetComponent<ARSession>();
-        if (session != null)
+        if (arSessioin != null)
         {
-            session.Reset();
-            Debug.Log("AR Session has been reset.");
+            yield return null;
+            arSessioin.SetActive(false);
+            yield return new WaitForSeconds(0.5f);
+            arSessioin.SetActive(true);
         }
     }
+
 }
+

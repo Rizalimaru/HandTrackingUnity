@@ -32,6 +32,8 @@ public class ObjectSpawner : MonoBehaviour
     {
         if (trackedImageManager != null)
             trackedImageManager.trackablesChanged.RemoveListener(OnTrackedImagesChanged);
+        
+        ClearAllSpawnedObjects();
     }
 
     // Mendapatkan nama instrumen yang aktif di scene
