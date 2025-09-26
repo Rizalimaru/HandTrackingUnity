@@ -7,7 +7,33 @@ using TMPro;
 public class AtomInitializer : MonoBehaviour
 {
     [Header("Data Soal")]
-    private string[] possibleCompounds = { "NaCl", "CO2", "CaO", "O2", "MgO", "KCl", "SO2" };
+    private string[] possibleCompounds = {
+    "NaCl",
+    "CO2",
+    "CaO",
+    "O2",
+    "MgO",
+    "KCl",
+    "SO2",   
+    "LiCl",  // Lithium chloride
+    "NaF",   // Sodium fluoride
+    "NaBr",  // Sodium bromide
+    "KF",    // Potassium fluoride
+    "KBr",   // Potassium bromide
+    "RbCl",  // Rubidium chloride
+    "CsI",   // Cesium iodide
+    "CaF2",  // Calcium fluoride
+    "MgCl2", // Magnesium chloride
+    "BeO",   // Beryllium oxide
+    "SrCl2", // Strontium chloride
+    "BaO",   // Barium oxide
+    "AlF3",  // Aluminium fluoride
+    "BF3",   // Boron trifluoride
+    "SiO2",  // Silicon dioxide
+    "N2O5",  // Dinitrogen pentoxide
+    "PCl3",  // Phosphorus trichloride
+    "SF6",   // Sulfur hexafluoride
+    "XeF2" };   // Xenon difluoride};
     public string targetCompound;
 
     [Header("Pengaturan Prefab dan Spawn")]
@@ -252,6 +278,17 @@ void InitializeAtoms()
         if (compound == "XeF2") return new string[] { "Xe", "F" };
         if (compound == "SO2") return new string[] { "S", "O" };
         if (compound == "CO2") return new string[] { "C", "O" };
+
+
+        if (compound == "CaF2") return new string[] { "Ca", "F" };
+        if (compound == "MgCl2")return new string[] { "Mg", "Cl" };
+        if (compound == "SrCl2")return new string[] { "Sr", "Cl" };
+        if (compound == "AlF3") return new string[] { "Al", "F" };
+        if (compound == "BF3")  return new string[] { "B",  "F" };
+        if (compound == "SiO2") return new string[] { "Si", "O" };
+        if (compound == "N2O5") return new string[] { "N",  "O" };
+        if (compound == "PCl3") return new string[] { "P",  "Cl" };
+        if (compound == "SF6")  return new string[] { "S",  "F" };
 
         List<string> atoms = new List<string>();
         string currentAtom = "";

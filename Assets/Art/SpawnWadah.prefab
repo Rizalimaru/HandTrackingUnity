@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8899495399798015043
 Transform:
   m_ObjectHideFlags: 0
@@ -69,10 +69,41 @@ MonoBehaviour:
     atomPrefab: {fileID: 6822226864336343365, guid: 722d651556f23f642a98bfc1cd640cf3, type: 3}
   - atomName: O
     atomPrefab: {fileID: 4155798892541385230, guid: 29145c7f839010f4888ffec64f0efd03, type: 3}
+  - atomName: Li
+    atomPrefab: {fileID: 5499665993794583263, guid: e786d3e4b892b10429e62cb43bd6d2e3, type: 3}
+  - atomName: F
+    atomPrefab: {fileID: 2420336630089147148, guid: a7a4b97fb2e4e7349a0110194c7a94d0, type: 3}
+  - atomName: Br
+    atomPrefab: {fileID: 5677922298478374381, guid: dccfd8cc5fb15b04ab79e7f7e6c38a6a, type: 3}
+  - atomName: Cs
+    atomPrefab: {fileID: 1769595790526578184, guid: e34d9887861ce41479cdd33f04b1b7f2, type: 3}
+  - atomName: Rb
+    atomPrefab: {fileID: 7372850708774059699, guid: 003119880f354174b930af9a89bb1e60, type: 3}
+  - atomName: I
+    atomPrefab: {fileID: 2080248255745515713, guid: 23bf05fde013b9b4c9bf88dc093806d1, type: 3}
+  - atomName: Be
+    atomPrefab: {fileID: 4798100668379417745, guid: 6149f9d7d140424448f0b2ac1e01fc5d, type: 3}
+  - atomName: Sr
+    atomPrefab: {fileID: 57631713490732301, guid: 0609bd69acffdb64797ee654e0e79e01, type: 3}
+  - atomName: Ba
+    atomPrefab: {fileID: 1049353987601459250, guid: 0f6d3d8ee8379ea40bf68c9cbeadaf17, type: 3}
+  - atomName: Al
+    atomPrefab: {fileID: 6029985706640725277, guid: f3a99f77dbde4c1438ed2bbbd72517a8, type: 3}
+  - atomName: B
+    atomPrefab: {fileID: 3411411972572564261, guid: 370c8c5129b6d7e49ab37b02a409b7fa, type: 3}
+  - atomName: Si
+    atomPrefab: {fileID: 6430283369760959043, guid: ca9cb72dd9411bd489e08a4132ae4b1e, type: 3}
+  - atomName: N
+    atomPrefab: {fileID: 4388274967431210840, guid: 874144a96b523ac4da86d54fe0ca5b0c, type: 3}
+  - atomName: P
+    atomPrefab: {fileID: 4048120899429204804, guid: f5a9c9e3846d60447a9e29aaad18db79, type: 3}
+  - atomName: Xe
+    atomPrefab: {fileID: 4386146020711532401, guid: 8f55c1c5f591ee44496392ef897c6224, type: 3}
   spawnPoints:
   - {fileID: 4327577102843313306}
   - {fileID: 6265397100648332575}
   - {fileID: 6871710878377261395}
+  compoundTextParent: {fileID: 0}
 --- !u!1 &1256484999032954263
 GameObject:
   m_ObjectHideFlags: 0
