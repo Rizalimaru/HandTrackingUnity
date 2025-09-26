@@ -31,6 +31,7 @@ public class UIManager : MonoBehaviour
 
     public void ShowSalah()
     {
+        AudioKimia.Instance.PlaySFX(0);
         if (uiSalah != null) uiSalah.SetActive(true);
         Invoke("HideSalah", 1f);
     }
@@ -39,6 +40,8 @@ public class UIManager : MonoBehaviour
 
     public void ShowBenar()
     {
+        AudioKimia.Instance.PlaySFX(1);
+
         if (uiBenar != null) uiBenar.SetActive(true);
     }
 

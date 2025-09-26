@@ -60,6 +60,7 @@ public void OnClicked()
 
 private IEnumerator MoveToWadahThenFall(Vector3 targetPos)
 {
+    AudioKimia.Instance.PlaySFX(1); // suara ambil atom
     Debug.Log($"Atom {atomName} bergerak ke wadah di posisi {targetPos}");
     Vector3 startPos = transform.position;
     float duration = 3f;

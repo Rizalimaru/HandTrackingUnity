@@ -8,8 +8,8 @@ public class AtomInitializer : MonoBehaviour
 {
     [Header("Data Soal")]
     private string[] possibleCompounds = {
-    "NaCl",
-    "CO2",
+    "NaCl", // Natrium Klorida
+    "CO2", // Karbondioks
     "CaO",
     "O2",
     "MgO",
@@ -134,8 +134,10 @@ public bool TryClickAtom(AtomInteraction clickedAtom)
         return true; // valid
     }
 
-    // Kalau urutan salah
-    //UIManager.Instance.ShowSalah();
+        // Kalau urutan salah
+        //UIManager.Instance.ShowSalah();
+    
+    AudioKimia.Instance.PlaySFX(0);
     return false;
 }
 
@@ -162,6 +164,8 @@ public bool TryClickAtom(AtomInteraction clickedAtom)
     }
 
     public void OnCorrectAtomClicked(AtomInteraction clickedAtomScript)
+
+
     {
         if (!correctAtomsClicked.Contains(clickedAtomScript))
         {
@@ -179,8 +183,13 @@ public bool TryClickAtom(AtomInteraction clickedAtom)
     {
         string[] reactants = ParseCompound(targetCompound);
         string resultText = $"{reactants[0]} + {reactants[1]} → {targetCompound}";
-        yield return new WaitForSeconds(4f);
+        AudioKimia.Instance.PlaySFX(2);
+        yield return new WaitForSeconds(2f);
+        AudioKimia.Instance.PlaySFX(2);
+        yield return new WaitForSeconds(2f);
+        
         UIManager.Instance.SetHasilText(resultText);
+        AudioKimia.Instance.PlaySFX(3);
         yield return new WaitForSeconds(2f);
 
         // 🔄 Ganti dari RestartScene() ke ResetGame()
