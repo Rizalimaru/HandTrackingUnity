@@ -47,6 +47,3 @@ Pemain dapat memindai marker untuk menampilkan model 3D dan mendengar suara khas
 
 Gunakan **Unity versi [Unity 6.0 (6000.0.53f1) LTS]** untuk membuka project tanpa error.
 
----
-
-## 📂 Struktur Repository
