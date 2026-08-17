@@ -38,7 +38,7 @@ public class VoiceManager : MonoBehaviour
         {
             resultText.text = "Mendengarkan...";
             // Mulai merekam suara
-            SpeechRecognizer.StartRecording(true); // 'true' untuk mendapatkan hasil parsial
+            SpeechRecognizer.StartRecording(true);
         }
     }
 

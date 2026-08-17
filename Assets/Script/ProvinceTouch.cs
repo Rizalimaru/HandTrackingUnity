@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ProvinceTouch : MonoBehaviour
 {
-    public Color touchColor = Color.red; // Warna saat disentuh
+    public Color touchColor = Color.red;
     private Color originalColor;
     public GameObject pointer;
     private Renderer rend;
@@ -14,14 +14,14 @@ public class ProvinceTouch : MonoBehaviour
         pointer.SetActive(false);
     }
 
-    public void OnTouch() // 🔹 Ganti jadi public
+    public void OnTouch()
     {
         rend.material.color = touchColor;
         pointer.SetActive(true);
         pointer.transform.position = new Vector3(transform.position.x, pointer.transform.position.y, transform.position.z);
     }
 
-    public void OnRelease() // 🔹 Ganti jadi public
+    public void OnRelease()
     {
         rend.material.color = originalColor;
     }
