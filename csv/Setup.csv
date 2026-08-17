@@ -1,0 +1,13 @@
+Parameter,Value,Device ID,Brand / Model,Android,RAM (GB),Chipset,Rear Camera,ARCore,Notes
+Research question,RQ4: image-tracking robustness,D1,Xiomi Poco X8 Pro,16,12 GB,Dimensity 8500-Ultra,50 MP Sony IMX882,Support,
+Detection timeout (s),5,D2,,,,,,,
+Stability observation (s),10,D3,,,,,,,
+Standard distance (cm),30,D4,,,,,,,
+Standard angle (degree),0,D5,,,,,,,
+Normal lighting target (lux),400,,,,,,,,
+Printed marker width (cm),,,,,,,,,
+APK version,1.0,,,,,,,,
+Test location,,,,,,,,,
+Tester name,,,,,,,,,
+Test start date,,,,,,,,,
+Test end date,,,,,,,,,

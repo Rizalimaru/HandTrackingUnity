@@ -135,10 +135,10 @@ public bool TryClickAtom(AtomInteraction clickedAtom)
     }
 
         // Kalau urutan salah
-        //UIManager.Instance.ShowSalah();
+        UIManager.Instance.ShowSalah();
     
-    AudioKimia.Instance.PlaySFX(0);
-    return false;
+        AudioKimia.Instance.PlaySFX(0);
+        return false;
 }
 
 

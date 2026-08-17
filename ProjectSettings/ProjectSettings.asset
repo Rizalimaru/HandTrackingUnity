@@ -146,6 +146,11 @@ PlayerSettings:
   bundleVersion: 0.1.0
   preloadedAssets:
   - {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  - {fileID: 4800000, guid: c9f956787b1d945e7b36e0516201fc76, type: 3}
+  - {fileID: 4800000, guid: 0945859e5a1034c2cb6dce53cb4fb899, type: 3}
+  - {fileID: 1422921335204284571, guid: 0ae13bde80a46cd4881107a333ced6dc, type: 2}
+  - {fileID: -6562938318570613456, guid: f86b642bbb313744487ad6f679116140, type: 2}
+  - {fileID: 11400000, guid: e5a5c9532f2c7024e9281ac6204044e1, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -301,7 +306,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: f52200f68f914a54cb5e5fac69baacf0, type: 3}
+      m_Icon: {fileID: 2800000, guid: c5475ca1fa8c7db4fa63329fc553bc8d, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
@@ -532,7 +537,10 @@ PlayerSettings:
       m_Height: 720
       m_Kind: 1
       m_SubKind: 
-  m_BuildTargetBatching: []
+  m_BuildTargetBatching:
+  - m_BuildTarget: Android
+    m_StaticBatching: 1
+    m_DynamicBatching: 0
   m_BuildTargetShaderSettings: []
   m_BuildTargetGraphicsJobs: []
   m_BuildTargetGraphicsJobMode: []

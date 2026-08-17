@@ -5,66 +5,56 @@ using UnityEngine.XR.ARFoundation;
 
 public class FreshSceneLoader : MonoBehaviour
 {
-    // Panggil ini dari UI Button / kode: LoadFresh("Kimia1");
-    public void LoadFresh(string sceneName)
+    /// <summary>
+    /// Load the unified KimiaAR scene in Racikan (quiz) mode.
+    /// Call this from the "Mulai" / "Mode Racikan" button.
+    /// </summary>
+    public void LoadKimiaRacikan()
     {
-        StartCoroutine(LoadFreshRoutine(sceneName));
+        GameModeSelector.SelectedMode = GameModeSelector.KimiaMode.Racikan;
+        StartCoroutine(LoadCleanRoutine("KimiaAR"));
     }
 
-    private IEnumerator LoadFreshRoutine(string sceneName)
+    /// <summary>
+    /// Load the unified KimiaAR scene in Kamus (dictionary) mode.
+    /// Call this from the "Kamus Mode" button.
+    /// </summary>
+    public void LoadKimiaKamus()
     {
-        Debug.Log("[FreshSceneLoader] Preparing fresh load for: " + sceneName);
+        GameModeSelector.SelectedMode = GameModeSelector.KimiaMode.Kamus;
+        StartCoroutine(LoadCleanRoutine("KimiaAR"));
+    }
 
-        // 1) Destroy possible persistent AR objects (ARSession, ARSessionOrigin, ARTrackedImageManager)
-        foreach (var s in FindObjectsOfType<ARSession>(true))
-        {
-            Debug.Log("[FreshSceneLoader] Destroying ARSession: " + s.gameObject.name);
-            Destroy(s.gameObject);
-        }
+    /// <summary>
+    /// Legacy method — kept for backward compatibility with Kimia1/Kimia2 backup scenes.
+    /// Panggil ini dari UI Button / kode: LoadFresh("Kimia1");
+    /// </summary>
+    public void LoadFresh(string sceneName)
+    {
+        StartCoroutine(LoadCleanRoutine(sceneName));
+    }
 
-        foreach (var o in FindObjectsOfType<ARSessionOrigin>(true))
-        {
-            Debug.Log("[FreshSceneLoader] Destroying ARSessionOrigin: " + o.gameObject.name);
-            Destroy(o.gameObject);
-        }
+    private IEnumerator LoadCleanRoutine(string sceneName)
+    {
+        Debug.Log("[FreshSceneLoader] Preparing clean load for: " + sceneName);
 
-        foreach (var m in FindObjectsOfType<ARTrackedImageManager>(true))
+        // 1) Clear any spawned AR objects (without destroying the AR Session itself)
+        foreach (var sp in Object.FindObjectsByType<ObjectSpawner>(FindObjectsSortMode.None))
         {
-            Debug.Log("[FreshSceneLoader] Destroying ARTrackedImageManager: " + m.gameObject.name);
-            Destroy(m.gameObject);
-        }
-
-        // 2) destroy any custom persistent spawners or managers (jika kamu pernah pakai DontDestroyOnLoad)
-        foreach (var sp in FindObjectsOfType<ObjectSpawner>(true))
-        {
-            Debug.Log("[FreshSceneLoader] Clearing & destroying ObjectSpawner: " + sp.gameObject.name);
+            Debug.Log("[FreshSceneLoader] Clearing ObjectSpawner: " + sp.gameObject.name);
             sp.ClearAllSpawnedObjects();
-            Destroy(sp.gameObject);
         }
 
-        // 3) release unused assets & run GC (memberi kesempatan Unity untuk cleanup)
+        // 2) Release unused assets & run GC
         yield return Resources.UnloadUnusedAssets();
         System.GC.Collect();
         yield return null;
 
-        // 4) Load scene sebagai Single (ini akan unload scene lain jika masih ada)
+        // 3) Load scene (Single mode replaces the current scene)
         Debug.Log("[FreshSceneLoader] Loading scene: " + sceneName);
         var op = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
         while (!op.isDone) yield return null;
 
-        // 5) Wait a frame and try to reset the new ARSession if it exists
-        yield return null;
-        var newSession = FindObjectOfType<ARSession>();
-        if (newSession != null)
-        {
-            Debug.Log("[FreshSceneLoader] Resetting ARSession in new scene");
-            // disable/enable + Reset untuk memastikan subsystems restart
-            newSession.enabled = false;
-            yield return null;
-            newSession.enabled = true;
-            newSession.Reset();
-        }
-
-        Debug.Log("[FreshSceneLoader] Fresh load finished: " + sceneName);
+        Debug.Log("[FreshSceneLoader] Clean load finished: " + sceneName);
     }
 }

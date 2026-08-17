@@ -19,8 +19,31 @@ public class SceneTransition : MonoBehaviour
         SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
     }
 
+    /// <summary>
+    /// Load KimiaAR in Racikan (quiz) mode.
+    /// </summary>
+    public void LoadKimiaRacikan()
+    {
+        GameModeSelector.SelectedMode = GameModeSelector.KimiaMode.Racikan;
+        LoadScene("KimiaAR");
+    }
+
+    /// <summary>
+    /// Load KimiaAR in Kamus (dictionary) mode.
+    /// </summary>
+    public void LoadKimiaKamus()
+    {
+        GameModeSelector.SelectedMode = GameModeSelector.KimiaMode.Kamus;
+        LoadScene("KimiaAR");
+    }
+
     public void BackToMainMenu()
     {
+        // Clean up any spawned AR objects before going back
+        foreach (var sp in Object.FindObjectsByType<ObjectSpawner>(FindObjectsSortMode.None))
+        {
+            sp.ClearAllSpawnedObjects();
+        }
         SceneManager.LoadScene("MainmenuKimia");
     }
 
@@ -35,5 +58,3 @@ public class SceneTransition : MonoBehaviour
     }
 
 }
-
-
