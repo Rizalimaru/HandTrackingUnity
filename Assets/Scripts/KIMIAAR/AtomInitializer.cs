@@ -87,6 +87,19 @@ public class AtomInitializer : MonoBehaviour
 
     void Start()
     {
+        // Tunda 1 detik agar wadah AR punya waktu untuk muncul/render dulu
+        // sebelum UI soal dan atom-atom ditampilkan
+        StartCoroutine(DelayedStart());
+    }
+
+    private IEnumerator DelayedStart()
+    {
+        // Sembunyikan UI soal dulu saat wadah baru muncul
+        if (UIManager.Instance != null)
+            UIManager.Instance.HideSoal();
+
+        yield return new WaitForSeconds(1f); // Tunggu 1 detik
+
         StartNewRound();
     }
 
