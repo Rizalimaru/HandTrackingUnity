@@ -7,9 +7,10 @@ using TMPro;
 public class AtomInitializer : MonoBehaviour
 {
     [Header("Data Soal")]
+    [SerializeField]
     private string[] possibleCompounds = {
     "NaCl", // Natrium Klorida
-    "CO2", // Karbondioks
+    "CO2", // Karbondioksida
     "CaO",
     "O2",
     "MgO",
@@ -33,8 +34,18 @@ public class AtomInitializer : MonoBehaviour
     "N2O5",  // Dinitrogen pentoxide
     "PCl3",  // Phosphorus trichloride
     "SF6",   // Sulfur hexafluoride
-    "XeF2" };   // Xenon difluoride};
+    "XeF2" };   // Xenon difluoride
+
+    // Properti publik agar script UI Testing bisa membaca daftar soal
+    public string[] PossibleCompounds => possibleCompounds;
+
     public string targetCompound;
+
+    [Header("Testing Mode")]
+    [Tooltip("Centang untuk memaksa memunculkan compound tertentu dari Dropdown Test")]
+    public bool isTestMode = false;
+    [Tooltip("Nama senyawa yang akan dipaksa muncul jika Test Mode aktif")]
+    public string forcedCompound = "";
 
     [Header("Pengaturan Prefab dan Spawn")]
     public AtomPrefabMap[] atomLibrary;
@@ -74,8 +85,17 @@ public class AtomInitializer : MonoBehaviour
 
     public void StartNewRound()
     {
-        targetCompound = possibleCompounds[Random.Range(0, possibleCompounds.Length)];
-        Debug.Log($"Soal ronde ini adalah: {targetCompound}");
+        // LOGIKA TEST MODE
+        if (isTestMode && !string.IsNullOrEmpty(forcedCompound))
+        {
+            targetCompound = forcedCompound;
+            Debug.Log($"[TEST MODE] Memaksa soal: {targetCompound}");
+        }
+        else
+        {
+            targetCompound = possibleCompounds[Random.Range(0, possibleCompounds.Length)];
+            Debug.Log($"Soal ronde ini adalah: {targetCompound}");
+        }
 
         // Tampilkan soal di UIManager
         if (UIManager.Instance != null)
