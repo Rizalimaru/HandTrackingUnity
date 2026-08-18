@@ -64,6 +64,9 @@ public class AtomInitializer : MonoBehaviour
     private int nextAtomIndex = 0; // atom target ke berapa yang harus diklik
     public GameObject compoundTextParent;
 
+    // --- Variabel Hint ---
+    private float idleTimer = 0f;
+    private bool isHinting = false;
 
     private List<AtomInteraction> correctAtomsClicked = new List<AtomInteraction>();
 
@@ -71,9 +74,13 @@ public class AtomInitializer : MonoBehaviour
     {
         foreach (var item in atomLibrary)
         {
-            if (item.atomPrefab != null && !atomPrefabDict.ContainsKey(item.atomName))
+            if (item != null && !string.IsNullOrEmpty(item.atomName) && item.atomPrefab != null)
             {
-                atomPrefabDict.Add(item.atomName, item.atomPrefab);
+                string cleanName = item.atomName.Trim(); // Cegah error karena salah ketik spasi ("Cl ")
+                if (!atomPrefabDict.ContainsKey(cleanName))
+                {
+                    atomPrefabDict.Add(cleanName, item.atomPrefab);
+                }
             }
         }
     }
@@ -85,6 +92,12 @@ public class AtomInitializer : MonoBehaviour
 
     public void StartNewRound()
     {
+        StopAllHints();
+
+        // 1. Singkronisasi dengan pilihan UI (sekalipun dipilih saat wadah belum muncul)
+        isTestMode = CompoundTestTool.GlobalIsTestMode;
+        forcedCompound = CompoundTestTool.GlobalForcedCompound;
+
         // LOGIKA TEST MODE
         if (isTestMode && !string.IsNullOrEmpty(forcedCompound))
         {
@@ -128,8 +141,52 @@ public class AtomInitializer : MonoBehaviour
             }
         }
     }
+
+    void Update()
+    {
+        if (string.IsNullOrEmpty(targetCompound)) return;
+
+        string[] compoundAtoms = ParseCompound(targetCompound);
+        if (nextAtomIndex >= compoundAtoms.Length) return;
+
+        idleTimer += Time.deltaTime;
+
+        if (idleTimer >= 5f && !isHinting)
+        {
+            TriggerHintForNextAtom(compoundAtoms);
+        }
+    }
+
+    private void TriggerHintForNextAtom(string[] compoundAtoms)
+    {
+        string targetAtomName = compoundAtoms[nextAtomIndex];
+        AtomInteraction[] allAtoms = Object.FindObjectsByType<AtomInteraction>(FindObjectsSortMode.None);
+        
+        foreach (var atom in allAtoms)
+        {
+            if (atom.atomName == targetAtomName && !correctAtomsClicked.Contains(atom))
+            {
+                atom.TriggerHint();
+                isHinting = true;
+                break; // Cukup 1 atom yang di-hint
+            }
+        }
+    }
+
+    private void StopAllHints()
+    {
+        idleTimer = 0f;
+        isHinting = false;
+        AtomInteraction[] allAtoms = Object.FindObjectsByType<AtomInteraction>(FindObjectsSortMode.None);
+        foreach (var atom in allAtoms)
+        {
+            if (atom != null) atom.StopHint();
+        }
+    }
 public bool TryClickAtom(AtomInteraction clickedAtom)
 {
+    StopAllHints(); // Hentikan hint jika ada interaksi
+
     string[] compoundAtoms = ParseCompound(targetCompound);
 
     // 🔒 Cegah akses index di luar panjang array
@@ -167,6 +224,7 @@ public bool TryClickAtom(AtomInteraction clickedAtom)
     // 🔄 Ganti RestartScene dengan ResetGame
     public void ResetGame()
     {
+        StopAllHints();
         correctAtomsClicked.Clear();
 
         UIManager.Instance.HideBenar();
@@ -244,33 +302,51 @@ void InitializeAtoms()
         }
     }
 
-    // 🎯 Pilih distractor yang aman (tidak bikin senyawa lain)
-    string distractorAtomName;
-    do
+    // 📦 Buat daftar atom untuk di-spawn berdasarkan komponen aslinya
+    List<string> atomsToSpawnNames = new List<string>();
+    
+    // 1. Masukkan semua atom wajib pembentuk senyawa (maksimal sebanyak slot spawn)
+    for (int i = 0; i < compoundAtoms.Length; i++)
     {
-        distractorAtomName = allAtomNames[Random.Range(0, allAtomNames.Count)];
+        if (i < spawnPoints.Length)
+        {
+            atomsToSpawnNames.Add(compoundAtoms[i]);
+        }
     }
-    while (
-        (targetCompound != "O2") && ( // Kecuali kasus O2
-            distractorAtomName == compoundAtoms[0] ||
-            distractorAtomName == compoundAtoms[1] ||
-            validPairs.Contains(compoundAtoms[0] + distractorAtomName) ||
-            validPairs.Contains(distractorAtomName + compoundAtoms[0]) ||
-            validPairs.Contains(compoundAtoms[1] + distractorAtomName) ||
-            validPairs.Contains(distractorAtomName + compoundAtoms[1])
-        )
-    );
 
-    // 📦 Buat daftar atom untuk di-spawn
-    List<string> atomsToSpawnNames = new List<string>
+    // 2. Penuhi sisa slot dengan distractor jika ada sisa tempat (misal NaCl butuh 2, ada 3 slot, maka 1 distractor)
+    int attempts = 0;
+    while (atomsToSpawnNames.Count < spawnPoints.Length && attempts < 50)
     {
-        compoundAtoms[0],
-        compoundAtoms[1],
-        distractorAtomName
-    };
+        attempts++;
+        string distractorAtomName = allAtomNames[Random.Range(0, allAtomNames.Count)];
+        
+        bool isInvalid = false;
+        if (targetCompound != "O2")
+        {
+            foreach (string atom in compoundAtoms)
+            {
+                if (distractorAtomName == atom || 
+                    validPairs.Contains(atom + distractorAtomName) || 
+                    validPairs.Contains(distractorAtomName + atom))
+                {
+                    isInvalid = true;
+                    break;
+                }
+            }
+        }
 
-    // 🔀 Acak urutan
+        if (!isInvalid)
+        {
+            atomsToSpawnNames.Add(distractorAtomName);
+        }
+    }
+
+    // 🔀 Acak urutan agar tidak selalu di posisi yang sama
     atomsToSpawnNames = atomsToSpawnNames.OrderBy(x => Random.value).ToList();
+
+    // 🚀 Bersihkan sisa atom lama (memastikan benar-benar bersih sebelum spawn baru)
+    ClearSpawnPoints();
 
     // 🚀 Spawn di scene
     for (int i = 0; i < spawnPoints.Length; i++)
@@ -279,8 +355,9 @@ void InitializeAtoms()
         if (atomPrefabDict.ContainsKey(atomName))
         {
             GameObject prefabToSpawn = atomPrefabDict[atomName];
+
             GameObject newAtomInstance = Instantiate(prefabToSpawn, spawnPoints[i].position, spawnPoints[i].rotation);
-            newAtomInstance.transform.SetParent(spawnPoints[i]);
+                newAtomInstance.transform.SetParent(spawnPoints[i]);
 
             AtomInteraction atomScript = newAtomInstance.GetComponent<AtomInteraction>();
             if (atomScript != null)

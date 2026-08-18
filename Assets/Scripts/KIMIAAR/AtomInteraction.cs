@@ -6,6 +6,11 @@ public class AtomInteraction : MonoBehaviour
     private bool isMoving = false;
     private Rigidbody rb;
 
+    // --- Variabel Hint ---
+    private Coroutine hintCoroutine;
+    private Renderer[] atomRenderers;
+    private float originalZ;
+
     // ID unik untuk setiap atom
     public string uniqueID { get; private set; }
 
@@ -35,68 +40,154 @@ public class AtomInteraction : MonoBehaviour
     }
 
 
-public void OnClicked()
-{
-    if (!isMoving)
+    public void OnClicked()
     {
-        AtomInitializer initializer = FindFirstObjectByType<AtomInitializer>();
+        if (!isMoving)
+        {
+            StopHint(); // Hentikan hint jika atom ini diklik
+            
+            AtomInitializer initializer = FindFirstObjectByType<AtomInitializer>();
         if (initializer != null)
         {
             if (initializer.TryClickAtom(this))
             {
                 // Kalau benar & sesuai urutan → jalanin animasi
-                GameObject wadah = GameObject.FindWithTag("Wadah");
-                if (wadah != null)
-                {
-                    Vector3 worldTarget = wadah.transform.position;
-                    transform.SetParent(wadah.transform);
-                    StartCoroutine(MoveToWadahThenFall(worldTarget));
-                    isMoving = true;
-                }
+                // Gunakan posisi dari initializer karena script tersebut menempel di Wadah
+                Vector3 worldTarget = initializer.transform.position;
+                transform.SetParent(initializer.transform);
+                StartCoroutine(MoveToWadahThenFall(worldTarget));
+                isMoving = true;
             }
         }
     }
 }
 
-private IEnumerator MoveToWadahThenFall(Vector3 targetPos)
-{
-    AudioKimia.Instance.PlaySFX(1); // suara ambil atom
-    Debug.Log($"Atom {atomName} bergerak ke wadah di posisi {targetPos}");
-    Vector3 startPos = transform.position;
-    float duration = 3f;
-    float elapsed = 0f;
-
-    // ⬅️ Tambahkan offset di Y target
-    targetPos = new Vector3(targetPos.x, targetPos.y + 0.01f, targetPos.z);
-
-    while (elapsed < duration)
+    private IEnumerator MoveToWadahThenFall(Vector3 targetPos)
     {
-        elapsed += Time.deltaTime;
-        float t = Mathf.Clamp01(elapsed / duration);
+        AudioKimia.Instance.PlaySFX(1); // suara ambil atom
+        Debug.Log($"Atom {atomName} melompat ke wadah di posisi {targetPos}");
+        
+        Vector3 startPos = transform.position;
+        
+        // Tambah sedikit random offset agar jika ada banyak atom, jatuhnya tidak bertumpuk di 1 titik persis
+        Vector3 randomOffset = new Vector3(
+            UnityEngine.Random.Range(-0.03f, 0.03f), 
+            0.02f, // Beri sedikit jarak dari dasar wadah agar tidak tembus
+            UnityEngine.Random.Range(-0.03f, 0.03f)
+        );
+        targetPos += randomOffset;
 
-        // Gerakan linear ke target
-        Vector3 linearPos = Vector3.Lerp(startPos, targetPos, t);
+        // Waktu tempuh dipercepat jadi 0.8 detik agar lebih responsif
+        float duration = 0.8f;
+        float elapsed = 0f;
 
-        // Tambah arc naik (sinus)
-        float yArc = Mathf.Sin(t * Mathf.PI) * 0.15f;
+        // Tinggi parabola tergantung jarak, minimal 0.15 unit
+        float distance = Vector3.Distance(startPos, targetPos);
+        float jumpHeight = Mathf.Max(0.15f, distance * 0.8f);
 
-        // Terapkan posisi dengan arc
-        transform.position = new Vector3(linearPos.x, linearPos.y + yArc, linearPos.z);
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / duration);
 
-        yield return null;
+            // 1. Gerakan linear mendatar (X dan Z) + Lerp Y
+            Vector3 currentPos = Vector3.Lerp(startPos, targetPos, t);
+
+            // 2. Tambahkan rumus Parabola fisik pada sumbu Y: 4 * h * t * (1 - t)
+            float parabola = 4f * jumpHeight * t * (1f - t);
+            currentPos.y += parabola;
+
+            transform.position = currentPos;
+
+            // 3. Efek rotasi berputar saat melayang (seperti dilempar)
+            transform.Rotate(Vector3.right * (500f * Time.deltaTime), Space.World);
+            transform.Rotate(Vector3.up * (300f * Time.deltaTime), Space.World);
+
+            yield return null;
+        }
+
+        // Pastikan posisi mendarat persis di target akhirnya
+        transform.position = targetPos;
+        
+        // Posisikan secara rata agar tidak miring setelah berputar
+        transform.rotation = Quaternion.identity;
+
+        // Tetap lock agar tidak bergeser aneh karena physics AR
+        rb.isKinematic = true;
     }
 
-    // Setelah sampai wadah → jatuh alami
-    rb.isKinematic = false;
-
-    while (transform.position.y > targetPos.y + 0.05f) // toleransi
+    // --- FITUR HINT LOMPAT ---
+    public void TriggerHint()
     {
-        yield return null;
+        if (hintCoroutine == null && !isMoving)
+        {
+            originalZ = transform.position.z;
+            
+            // Ambil semua renderer (untuk mengaktifkan emission)
+            atomRenderers = GetComponentsInChildren<Renderer>();
+            foreach (var r in atomRenderers)
+            {
+                if (r != null && r.material != null)
+                {
+                    r.material.EnableKeyword("_EMISSION");
+                }
+            }
+
+            hintCoroutine = StartCoroutine(HintAnimation());
+        }
     }
 
-    // Lock lagi persis di posisi target + offset
-    rb.isKinematic = true;
-    transform.position = new Vector3(transform.position.x, targetPos.y, transform.position.z);
-}
+    public void StopHint()
+    {
+        if (hintCoroutine != null)
+        {
+            StopCoroutine(hintCoroutine);
+            hintCoroutine = null;
+            // Kembalikan ke posisi Z semula
+            transform.position = new Vector3(transform.position.x, transform.position.y, originalZ);
+
+            // Matikan emission
+            if (atomRenderers != null)
+            {
+                foreach (var r in atomRenderers)
+                {
+                    if (r != null && r.material != null)
+                    {
+                        r.material.SetColor("_EmissionColor", Color.black);
+                    }
+                }
+            }
+        }
+    }
+
+    private IEnumerator HintAnimation()
+    {
+        float elapsed = 0f;
+        Color baseEmission = new Color(0.8f, 0.7f, 0.2f); // Kuning keemasan yang lebih soft
+
+        while (true)
+        {
+            elapsed += Time.deltaTime * 6f; // Kecepatan lompat
+            float pulse = Mathf.Abs(Mathf.Sin(elapsed));
+            float jumpOffset = pulse * 0.03f; // Tinggi lompatan halus
+
+            transform.position = new Vector3(transform.position.x, transform.position.y, originalZ + jumpOffset);
+            
+            // Efek berdenyut menggunakan material emission
+            if (atomRenderers != null)
+            {
+                foreach (var r in atomRenderers)
+                {
+                    if (r != null && r.material != null)
+                    {
+                        // Intensitas emission dari 0 sampai ~1.5x
+                        r.material.SetColor("_EmissionColor", baseEmission * (pulse * 1.5f));
+                    }
+                }
+            }
+
+            yield return null;
+        }
+    }
 
 }

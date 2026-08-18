@@ -12,6 +12,11 @@ public class CompoundTestTool : MonoBehaviour
     [Tooltip("Drag Dropdown TextMeshPro dari Canvas ke sini")]
     public TMP_Dropdown compoundDropdown;
 
+    // --- GLOBAL STATE ---
+    // Menyimpan pilihan agar tetap ingat meskipun wadah (AR) belum di-scan atau hilang
+    public static bool GlobalIsTestMode = false;
+    public static string GlobalForcedCompound = "";
+
     void Start()
     {
         if (atomInitializer == null)
@@ -56,27 +61,39 @@ public class CompoundTestTool : MonoBehaviour
     /// </summary>
     public void ApplyTestCompound()
     {
-        if (atomInitializer == null) return;
+        // Cari SEMUA AtomInitializer yang ada di scene
+        // (Berjaga-jaga jika ada script ganda di Scene dan di dalam Prefab Wadah)
+        AtomInitializer[] allInitializers = Object.FindObjectsByType<AtomInitializer>(FindObjectsSortMode.None);
 
         int selectedIndex = compoundDropdown.value;
 
-        // Jika opsi pertama dipilih, matikan Test Mode (kembali acak)
         if (selectedIndex == 0)
         {
-            atomInitializer.isTestMode = false;
-            atomInitializer.forcedCompound = "";
-            Debug.Log("[TestTool] Kembali ke mode Acak (Random)");
+            GlobalIsTestMode = false;
+            GlobalForcedCompound = "";
+            Debug.Log("[DevMode] Mode Acak (Core Game) dipilih.");
         }
         else
         {
-            // Jika memilih senyawa, nyalakan Test Mode
-            atomInitializer.isTestMode = true;
-            // Index dikurangi 1 karena opsi pertama adalah "-- ACAK --"
-            atomInitializer.forcedCompound = atomInitializer.PossibleCompounds[selectedIndex - 1];
-            Debug.Log($"[TestTool] Mengunci senyawa ke: {atomInitializer.forcedCompound}");
+            GlobalIsTestMode = true;
+            // Gunakan teks opsi dropdown secara langsung agar sinkron
+            GlobalForcedCompound = compoundDropdown.options[selectedIndex].text;
+            Debug.Log($"[DevMode] Mengunci soal untuk testing: {GlobalForcedCompound}");
         }
 
-        // Paksa reset soal agar senyawa baru langsung muncul di meja
-        atomInitializer.ResetGame();
+        // Jika ada wadah/script yang sudah aktif, langsung reset semuanya
+        if (allInitializers.Length > 0)
+        {
+            foreach (var initializer in allInitializers)
+            {
+                initializer.isTestMode = GlobalIsTestMode;
+                initializer.forcedCompound = GlobalForcedCompound;
+                initializer.ResetGame();
+            }
+        }
+        else
+        {
+            Debug.LogWarning("[DevMode] Wadah belum di-scan. Setingan ini akan otomatis diterapkan saat wadah muncul.");
+        }
     }
 }
